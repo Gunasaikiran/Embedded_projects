@@ -1,0 +1,62 @@
+A51 MACRO ASSEMBLER  FINDINGMAXIMUM                                                       10/21/2022 11:50:17 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+NO OBJECT MODULE REQUESTED
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE FINDINGMAXIMUM.a51 SET(SMALL) DEBUG PRINT(.\Listings\FINDINGMAXIMUM.lst
+                      ) OBJECT(.\Objects\FINDINGMAXIMUM.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 8033              2       SJMP START
+                       3     
+0064                   4     ORG 0064H
+0064 01                5     LUT: DB 01D
+0065 02                6     DB 02D
+0066 03                7     DB 03D
+0067 04                8     DB 04D
+0068 05                9     DB 05D
+0069 06               10     DB 06D
+006A 07               11     DB 07D
+006B 08               12     DB 08D
+006C 09               13     DB 09D
+006D 0A               14     DB 10D
+                      15     
+0035                  16     ORG 0035H
+0035 7400             17     START: MOV A, #00H  
+0037 7800             18     MOV R0, #00H  
+0039 900064           19     MOV DPTR, #64H  
+003C 790A             20     MOV R1, #0AH  
+003E                  21     LOOP: MOVC R2, @DPTR  
+*** ____________________________________^
+*** ERROR #A40 IN 21 (FINDINGMAXIMUM.a51, LINE 21): INVALID REGISTER
+003E C3               22     CLR C  
+003F A3               23     INC DPTR  
+0040 9A               24     SUBB A, R2 
+0041 5002             25     JNC SKIP  
+0043                  26     MOV RO, R2  
+*** _____________________________^
+*** ERROR #A45 IN 26 (FINDINGMAXIMUM.a51, LINE 26): UNDEFINED SYMBOL (PASS-2)
+0045 E8               27     SKIP: MOV A, R0  
+0046 D9F6             28     DJNZ R1, LOOP  
+                      29     END  
+A51 MACRO ASSEMBLER  FINDINGMAXIMUM                                                       10/21/2022 11:50:17 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LOOP . . . . . . .  C ADDR   003EH   A   
+LUT. . . . . . . .  C ADDR   0064H   A   
+RO . . . . . . . .    ----   -----       
+SKIP . . . . . . .  C ADDR   0045H   A   
+START. . . . . . .  C ADDR   0035H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 2 ERROR(S)

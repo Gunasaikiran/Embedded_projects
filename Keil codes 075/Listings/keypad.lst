@@ -1,0 +1,200 @@
+A51 MACRO ASSEMBLER  KEYPAD                                                               10/21/2022 11:18:31 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\KEYPAD.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE KEYPAD.a51 SET(SMALL) DEBUG PRINT(.\Listings\KEYPAD.lst) OBJECT(.\Objec
+                      ts\KEYPAD.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 900090            2     MOV DPTR,#LUT  
+0003 74FF              3     MOV A,#11111111B  
+0005 758000            4     MOV P0,#00H  
+                       5     
+0008 7590FF            6     BACK:MOV P1,#0FFH 
+000B C290              7          CLR P1.0          
+000D 209404            8          JB P1.4,NEXT1   
+0010 7400              9          MOV A,#0D    
+0012 118C             10          ACALL DISPLAY   
+                      11              
+                      12              
+                      13              
+                      14     
+0014 209504           15     NEXT1:JB P1.5,NEXT2 
+0017 7401             16           MOV A,#1D
+0019 118C             17           ACALL DISPLAY
+                      18               
+                      19               
+                      20               
+                      21     
+001B 209604           22     NEXT2:JB P1.6,NEXT3
+001E 7402             23           MOV A,#2D
+0020 118C             24           ACALL DISPLAY
+                      25               
+                      26               
+                      27               
+                      28     
+0022 209704           29     NEXT3:JB P1.7,NEXT4
+0025 7403             30           MOV A,#3D
+0027 118C             31           ACALL DISPLAY
+                      32               
+                      33               
+                      34               
+                      35     
+                      36     
+0029 D290             37     NEXT4:SETB P1.0
+002B C291             38           CLR P1.1
+002D 209404           39           JB P1.4,NEXT5
+0030 7404             40           MOV A,#4D
+0032 118C             41           ACALL DISPLAY
+                      42               
+                      43               
+                      44     
+0034 209504           45     NEXT5:JB P1.5,NEXT6
+0037 7405             46           MOV A,#5D
+0039 118C             47           ACALL DISPLAY
+                      48               
+                      49               
+                      50               
+                      51     
+003B 209604           52     NEXT6:JB P1.6,NEXT7
+003E 7406             53           MOV A,#6D
+0040 118C             54           ACALL DISPLAY
+                      55               
+                      56               
+                      57               
+A51 MACRO ASSEMBLER  KEYPAD                                                               10/21/2022 11:18:31 PAGE     2
+
+                      58     
+0042 209704           59     NEXT7:JB P1.7,NEXT8
+0045 7407             60           MOV A,#7D
+0047 118C             61           ACALL DISPLAY
+                      62               
+                      63               
+                      64               
+                      65     
+                      66     
+0049 D291             67     NEXT8:SETB P1.1
+004B C292             68           CLR P1.2
+004D 209404           69           JB P1.4,NEXT9
+0050 7408             70           MOV A,#8D
+0052 118C             71           ACALL DISPLAY
+                      72               
+                      73               
+                      74               
+                      75               
+                      76     
+0054 209504           77     NEXT9:JB P1.5,NEXT10
+0057 7409             78           MOV A,#9D
+0059 118C             79           ACALL DISPLAY
+                      80               
+                      81               
+                      82               
+                      83               
+                      84     
+005B 209604           85     NEXT10:JB P1.6,NEXT11
+005E 740A             86            MOV A,#10D
+0060 118C             87            ACALL DISPLAY
+                      88                
+                      89                
+                      90                
+                      91     
+0062 209704           92     NEXT11:JB P1.7,NEXT12
+0065 740B             93            MOV A,#11D
+0067 118C             94            ACALL DISPLAY
+                      95                
+                      96                
+                      97                
+                      98                
+                      99     
+                     100     
+0069 D292            101     NEXT12:SETB P1.2
+006B C293            102            CLR P1.3
+006D 209404          103            JB P1.4,NEXT13
+0070 740C            104            MOV A,#12D
+0072 118C            105            ACALL DISPLAY
+                     106                
+                     107                
+                     108     
+0074 209504          109     NEXT13:JB P1.5,NEXT14
+0077 740D            110            MOV A,#13D
+0079 118C            111            ACALL DISPLAY
+                     112                
+                     113                
+                     114     
+007B 209604          115     NEXT14:JB P1.6,NEXT15
+007E 740E            116            MOV A,#14D
+0080 118C            117            ACALL DISPLAY
+                     118                
+                     119                
+                     120     
+0082 209783          121     NEXT15:JB P1.7,BACK
+0085 740F            122            MOV A,#15D
+0087 118C            123            ACALL DISPLAY
+A51 MACRO ASSEMBLER  KEYPAD                                                               10/21/2022 11:18:31 PAGE     3
+
+                     124                
+0089 020008          125            LJMP BACK
+                     126                
+                     127                
+                     128     
+008C 93              129     DISPLAY:MOVC A,@A+DPTR 
+008D F5A0            130             MOV P2,A       
+008F 22              131             RET
+                     132                     
+                     133                     
+                     134     
+0090 3F              135     LUT: DB 3FH
+0091 06              136          DB 06H
+0092 5B              137          DB 5BH
+0093 4F              138          DB 4FH
+0094 66              139          DB 66H
+0095 6D              140          DB 6DH
+0096 7D              141          DB 7DH
+0097 07              142          DB 07H
+0098 7F              143          DB 7FH
+0099 6F              144          DB 6FH
+009A 77              145          DB 77H
+009B 7F              146          DB 7FH
+009C 39              147          DB 39H
+009D 3F              148          DB 3FH
+009E 79              149          DB 79H
+009F 71              150          DB 71H
+                     151          END
+A51 MACRO ASSEMBLER  KEYPAD                                                               10/21/2022 11:18:31 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   0008H   A   
+DISPLAY. . . . . .  C ADDR   008CH   A   
+LUT. . . . . . . .  C ADDR   0090H   A   
+NEXT1. . . . . . .  C ADDR   0014H   A   
+NEXT10 . . . . . .  C ADDR   005BH   A   
+NEXT11 . . . . . .  C ADDR   0062H   A   
+NEXT12 . . . . . .  C ADDR   0069H   A   
+NEXT13 . . . . . .  C ADDR   0074H   A   
+NEXT14 . . . . . .  C ADDR   007BH   A   
+NEXT15 . . . . . .  C ADDR   0082H   A   
+NEXT2. . . . . . .  C ADDR   001BH   A   
+NEXT3. . . . . . .  C ADDR   0022H   A   
+NEXT4. . . . . . .  C ADDR   0029H   A   
+NEXT5. . . . . . .  C ADDR   0034H   A   
+NEXT6. . . . . . .  C ADDR   003BH   A   
+NEXT7. . . . . . .  C ADDR   0042H   A   
+NEXT8. . . . . . .  C ADDR   0049H   A   
+NEXT9. . . . . . .  C ADDR   0054H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

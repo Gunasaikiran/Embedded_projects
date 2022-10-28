@@ -1,0 +1,3 @@
+".\Objects\BASICLED.obj" 
+TO ".\Objects\BASIC LED" 
+PRINT(".\Listings\BASIC LED.m51")

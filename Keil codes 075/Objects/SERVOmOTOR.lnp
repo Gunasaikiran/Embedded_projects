@@ -1,0 +1,3 @@
+".\Objects\SERVOTEST.obj" 
+TO ".\Objects\SERVOmOTOR" 
+PRINT(".\Listings\SERVOmOTOR.m51")

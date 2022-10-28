@@ -1,0 +1,61 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    10/21/2022  11:41:38  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\BLINKINGLED.obj TO .\Objects\BLINKLED PRINT (.\Listings\BLINKLED.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\BLINKINGLED.obj (BLINKINGLED)
+
+
+LINK MAP OF MODULE:  .\Objects\BLINKLED (BLINKINGLED)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0043H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\BLINKLED (BLINKINGLED)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BLINKINGLED
+  C:0017H         SYMBOL        GO_BACK
+  D:00A8H         SYMBOL        IE
+  D:0090H         SYMBOL        P1
+  C:0035H         SYMBOL        START
+  D:008CH         SYMBOL        TH0
+  D:008AH         SYMBOL        TL0
+  D:0089H         SYMBOL        TMOD
+  B:0088H.4       SYMBOL        TR0
+  C:0041H         SYMBOL        WAIT
+  C:0000H         LINE#         2
+  C:000BH         LINE#         6
+  C:000EH         LINE#         7
+  C:0011H         LINE#         8
+  C:0013H         LINE#         9
+  C:0015H         LINE#         10
+  C:0017H         LINE#         12
+  C:0035H         LINE#         16
+  C:0037H         LINE#         17
+  C:003AH         LINE#         18
+  C:003CH         LINE#         19
+  C:003FH         LINE#         20
+  C:0041H         LINE#         21
+  -------         ENDMOD        BLINKINGLED
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 001DH BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=67
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

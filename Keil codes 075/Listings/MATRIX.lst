@@ -1,0 +1,58 @@
+A51 MACRO ASSEMBLER  MATRIX                                                               10/21/2022 12:53:12 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\MATRIX.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE MATRIX.a51 SET(SMALL) DEBUG PRINT(.\Listings\MATRIX.lst) OBJECT(.\Objec
+                      ts\MATRIX.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 8033              2     SJMP START
+0035                   3     ORG 0035H
+0035 7902              4     START: MOV R1, #02H
+0037 7A04              5     MOV R2, #04H
+0039 7B01              6     MOV R3, #01H
+003B 7C03              7     MOV R4, #03H
+003D E9                8     MOV A, R1
+003E 8CF0              9     MOV B, R4
+0040 A4               10     MUL AB ; 1 1 * 2 2
+0041 85F045           11     MOV 45H, B
+0044 F546             12     MOV 46H, A
+0046 EA               13     MOV A, R2
+0047 8BF0             14     MOV B, R3
+0049 A4               15     MUL AB ; 1 2 * 2 1
+004A 85F047           16     MOV 47H, B
+004D F548             17     MOV 48H, A
+004F C3               18     CLR C
+0050 E4               19     CLR A
+0051 E545             20     MOV A, 45H
+0053 9547             21     SUBB A, 47H
+0055 F550             22     MOV 50H, A
+0057 E546             23     MOV A, 46H
+0059 9548             24     SUBB A, 48H
+005B F551             25     MOV 51H,A ; 16 bit determinant stored at 51H and 50H respectively
+005D A851             26     MOV R0,51H
+005F A950             27     MOV R1,50H
+0061 7A00             28     MOV R2,#00H
+0063 7B00             29     MOV R3,#00H
+0065 7C00             30     MOV R4,#00H
+0067 E4               31     CLR A
+                      32     END
+A51 MACRO ASSEMBLER  MATRIX                                                               10/21/2022 12:53:12 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+START. . . . . . .  C ADDR   0035H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,3 @@
+".\Objects\MATRIX.obj" 
+TO ".\Objects\DETERMINANT" 
+PRINT(".\Listings\DETERMINANT.m51")

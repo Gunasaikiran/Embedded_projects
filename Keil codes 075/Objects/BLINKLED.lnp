@@ -1,0 +1,3 @@
+".\Objects\BLINKINGLED.obj" 
+TO ".\Objects\BLINKLED" 
+PRINT(".\Listings\BLINKLED.m51")

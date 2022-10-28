@@ -1,0 +1,55 @@
+A51 MACRO ASSEMBLER  ADDITIONOF_10                                                        10/21/2022 12:01:50 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\additionof 10.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE additionof 10.a51 SET(SMALL) DEBUG PRINT(.\Listings\additionof 10.lst) 
+                      OBJECT(.\Objects\additionof 10.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 8033              2             SJMP START
+0035                   3     ORG 0035H
+0035 7909              4       START: MOV R1, #9D
+0037 E4                5              CLR A 
+0038 C3                6              CLR C 
+0039 780A              7              MOV R0, #0AH 
+003B 37                8              REPEAT: ADDC A, @R1 
+003C 09                9                      INC R1 
+003D D8FC             10                      DJNZ R0, REPEAT
+                      11                                              
+                      12     
+                      13     
+                      14     
+0009                  15     ORG 9D
+0009 01               16     LUT: DB 01D
+000A 02               17     DB 02D
+000B 03               18     DB 03D
+000C 04               19     DB 04D
+000D 05               20     DB 05D
+000E 06               21     DB 06D
+000F 07               22     DB 07D
+0010 08               23     DB 08D
+0011 09               24     DB 09D
+0012 0A               25     DB 10D
+                      26             
+                      27             
+                      28     END
+A51 MACRO ASSEMBLER  ADDITIONOF_10                                                        10/21/2022 12:01:50 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LUT. . . . . . . .  C ADDR   0009H   A   
+REPEAT . . . . . .  C ADDR   003BH   A   
+START. . . . . . .  C ADDR   0035H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

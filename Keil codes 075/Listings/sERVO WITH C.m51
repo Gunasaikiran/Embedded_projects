@@ -1,0 +1,130 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    10/20/2022  16:57:40  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\SERVO.obj TO .\Objects\sERVO WITH C PRINT (.\Listings\sERVO WITH C.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\SERVO.obj (SERVO)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\sERVO WITH C (SERVO)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0031H     UNIT         ?PR?MAIN?SERVO
+            CODE    0831H     0027H     UNIT         ?PR?_SERVO_DELAY?SERVO
+            CODE    0858H     0020H     UNIT         ?PR?_MSDELAY?SERVO
+            CODE    0878H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\sERVO WITH C (SERVO)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?SERVO
+
+?PR?MAIN?SERVO
+  +--> ?PR?_SERVO_DELAY?SERVO
+  +--> ?PR?_MSDELAY?SERVO
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\sERVO WITH C (SERVO)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SERVO
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0831H         PUBLIC        _servo_delay
+  C:0800H         PUBLIC        main
+  B:00A0H.0       PUBLIC        output
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/20/2022  16:57:40  PAGE 2
+
+
+  D:0089H         PUBLIC        TMOD
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  C:0858H         PUBLIC        _msdelay
+  -------         PROC          _MSDELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0858H         LINE#         9
+  C:0858H         LINE#         11
+  C:0858H         LINE#         15
+  C:0862H         LINE#         17
+  C:0877H         LINE#         19
+  -------         ENDPROC       _MSDELAY
+  -------         PROC          _SERVO_DELAY
+  D:0006H         SYMBOL        times
+  -------         DO            
+  D:0004H         SYMBOL        m
+  -------         ENDDO         
+  C:0831H         LINE#         22
+  C:0831H         LINE#         24
+  C:0831H         LINE#         28
+  C:0841H         LINE#         30
+  C:0841H         LINE#         32
+  C:0844H         LINE#         34
+  C:0847H         LINE#         36
+  C:0849H         LINE#         38
+  C:084CH         LINE#         40
+  C:084EH         LINE#         42
+  C:0850H         LINE#         44
+  C:0857H         LINE#         46
+  -------         ENDPROC       _SERVO_DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0082H         SYMBOL        n
+  -------         ENDDO         
+  C:0800H         LINE#         48
+  C:0800H         LINE#         50
+  C:0800H         LINE#         54
+  C:0803H         LINE#         56
+  C:0805H         LINE#         58
+  C:0805H         LINE#         60
+  C:0805H         LINE#         62
+  C:0815H         LINE#         64
+  C:0815H         LINE#         66
+  C:0817H         LINE#         68
+  C:081EH         LINE#         70
+  C:0820H         LINE#         72
+  C:0827H         LINE#         74
+  C:082DH         LINE#         76
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SERVO
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/20/2022  16:57:40  PAGE 3
+
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0078H BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=135
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

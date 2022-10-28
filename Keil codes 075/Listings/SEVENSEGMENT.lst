@@ -1,0 +1,64 @@
+A51 MACRO ASSEMBLER  SEVENSEGMENT                                                         10/21/2022 11:31:14 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\SEVENSEGMENT.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE SEVENSEGMENT.a51 SET(SMALL) DEBUG PRINT(.\Listings\SEVENSEGMENT.lst) OB
+                      JECT(.\Objects\SEVENSEGMENT.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 8036              2      SJMP START
+                       3      
+                       4      
+                       5      
+4000                   6     ORG 4000H
+4000 3F065B4F          7              DB 3FH, 06H, 5BH, 4FH, 66H, 6DH, 7DH, 07H, 7FH, 6FH, 0
+4004 666D7D07                
+4008 7F6F00                  
+                       8                      
+                       9             
+                      10     
+0035                  11     ORG 0035H
+0035 75A000           12             MOV P2, #00H              
+0038 904000           13             START: MOV DPTR,#4000H    
+003B E4               14         REPEAT:CLR A;            //Clearing Accumalator
+003C 93               15                MOVC A, @A+DPTR    
+003D F5A0             16                MOV P2,A           
+003F 1147             17                ACALL DELAY        
+0041 A3               18                INC DPTR           
+0042 B500F6           19                CJNE A,0,REPEAT    
+0045 80F1             20                SJMP START         
+                      21     
+                      22     
+0047 7808             23     DELAY: MOV R0,#08H
+0049 79FF             24            LP2 : MOV R1,#0FFH
+004B 7AFF             25            LP1 : MOV R2,#0FFH
+004D DAFE             26            LP3: DJNZ R2,LP3
+004F D9FA             27                 DJNZ R1,LP1
+0051 D8F6             28                 DJNZ R0,LP2
+0053 22               29     RET
+                      30     
+                      31     END
+A51 MACRO ASSEMBLER  SEVENSEGMENT                                                         10/21/2022 11:31:14 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   0047H   A   
+LP1. . . . . . . .  C ADDR   004BH   A   
+LP2. . . . . . . .  C ADDR   0049H   A   
+LP3. . . . . . . .  C ADDR   004DH   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+REPEAT . . . . . .  C ADDR   003BH   A   
+START. . . . . . .  C ADDR   0038H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

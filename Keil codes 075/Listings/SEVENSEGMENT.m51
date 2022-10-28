@@ -1,0 +1,66 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    10/20/2022  11:18:25  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\SEVENSEGMENT.obj TO .\Objects\SEVENSEGMENT PRINT (.\Listings\SEVENSEGMENT.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\SEVENSEGMENT.obj (SEVENSEGMENT)
+
+
+LINK MAP OF MODULE:  .\Objects\SEVENSEGMENT (SEVENSEGMENT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     400BH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\SEVENSEGMENT (SEVENSEGMENT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SEVENSEGMENT
+  C:0047H         SYMBOL        DELAY
+  C:004BH         SYMBOL        LP1
+  C:0049H         SYMBOL        LP2
+  C:004DH         SYMBOL        LP3
+  D:00A0H         SYMBOL        P2
+  C:003BH         SYMBOL        REPEAT
+  C:0038H         SYMBOL        START
+  C:0000H         LINE#         2
+  C:0035H         LINE#         7
+  C:0038H         LINE#         8
+  C:003BH         LINE#         9
+  C:003CH         LINE#         10
+  C:003DH         LINE#         11
+  C:003FH         LINE#         12
+  C:0041H         LINE#         13
+  C:0042H         LINE#         14
+  C:0045H         LINE#         15
+  C:0047H         LINE#         18
+  C:0049H         LINE#         19
+  C:004BH         LINE#         20
+  C:004DH         LINE#         21
+  C:004FH         LINE#         22
+  C:0051H         LINE#         23
+  C:0053H         LINE#         24
+  -------         ENDMOD        SEVENSEGMENT
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 002CH BYTE ( 2%) *
+******************************************************************************
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/20/2022  11:18:25  PAGE 2
+
+
+Program Size: data=8.0 xdata=0 code=16395
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

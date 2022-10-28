@@ -1,0 +1,55 @@
+A51 MACRO ASSEMBLER  BLINKINGLED                                                          10/21/2022 11:41:37 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\BLINKINGLED.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE BLINKINGLED.a51 SET(SMALL) DEBUG PRINT(.\Listings\BLINKINGLED.lst) OBJE
+                      CT(.\Objects\BLINKINGLED.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 8033              2        SJMP START 
+                       3     
+                       4     
+000B                   5     ORG 0000BH 
+000B 758AB0            6         MOV TL0, #0B0H 
+000E 758C3C            7         MOV TH0, #3CH 
+0011 D804              8         DJNZ R0, GO_BACK 
+0013 B290              9         CPL P1.0 
+0015 7814             10         MOV R0, #14H 
+0017                  11         GO_BACK: 
+0017 32               12     RETI 
+                      13     
+                      14     
+0035                  15     ORG 0035H 
+0035 C290             16         START: CLR P1.0
+0037 758901           17                MOV TMOD, #01H 
+003A 7814             18                MOV R0, #14H 
+003C 75A88A           19                MOV IE, #8AH 
+003F D28C             20                SETB TR0 
+0041 80FE             21                WAIT: JMP WAIT 
+                      22     END
+A51 MACRO ASSEMBLER  BLINKINGLED                                                          10/21/2022 11:41:37 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+GO_BACK. . . . . .  C ADDR   0017H   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+START. . . . . . .  C ADDR   0035H   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+WAIT . . . . . . .  C ADDR   0041H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

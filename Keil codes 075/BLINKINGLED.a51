@@ -1,0 +1,22 @@
+ORG 0000H
+   SJMP START 
+
+//INTERRUPTS SUB ROUTINE
+ORG 0000BH 
+    MOV TL0, #0B0H 
+    MOV TH0, #3CH 
+    DJNZ R0, GO_BACK 
+    CPL P1.0 
+    MOV R0, #14H 
+    GO_BACK: 
+RETI 
+
+//MAIN CODE
+ORG 0035H 
+    START: CLR P1.0
+           MOV TMOD, #01H 
+           MOV R0, #14H 
+           MOV IE, #8AH 
+           SETB TR0 
+           WAIT: JMP WAIT 
+END

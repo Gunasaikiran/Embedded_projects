@@ -1,0 +1,3 @@
+".\Objects\SEVENSEGMENT.obj" 
+TO ".\Objects\SEVENSEGMENT" 
+PRINT(".\Listings\SEVENSEGMENT.m51")

@@ -1,0 +1,3 @@
+".\Objects\KEYPAD.obj" 
+TO ".\Objects\keypadusinglcd" 
+PRINT(".\Listings\keypadusinglcd.m51")

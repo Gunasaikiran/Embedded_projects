@@ -1,0 +1,146 @@
+A51 MACRO ASSEMBLER  SERVOTEST                                                            10/21/2022 11:24:31 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\SERVOTEST.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE SERVOTEST.a51 SET(SMALL) DEBUG PRINT(.\Listings\SERVOTEST.lst) OBJECT(.
+                      \Objects\SERVOTEST.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H         
+0000 8033              2             SJMP MAIN
+                       3             
+                       4             
+0055                   5             ORG 0055H
+0055                   6              zero_degrees: 
+0055 758CFC            7               MOV TH0, #0FCH 
+0058 758A18            8               MOV TL0, #18H 
+005B D2A0              9               SETB P2.0 ;
+005D D28C             10               SETB TR0 ;
+005F 308DFD           11               WAIT1:JNB TF0, WAIT1 ; 
+0062 C28D             12               CLR TF0 ;
+0064 C28C             13               CLR TR0 ;
+0066 758CB5           14                       MOV TH0, #0B5H  
+0069 758AC7           15               MOV TL0, #0C7H 
+006C C2A0             16               CLR P2.0 ;
+006E D28C             17               SETB TR0 ;
+0070 308DFD           18               WAIT2:JNB TF0, WAIT2 ;
+0073 C28D             19               CLR TF0 ;
+0075 C28C             20               CLR TR0 ;
+0077 22               21                RET
+                      22                        
+                      23                        
+                      24             
+0065                  25                        ORG 0065H
+0065                  26                                ninety_degrees: 
+0065 758CFA           27                   MOV TH0, #0FAH 
+0068 758A24           28               MOV TL0, #24H 
+006B D2A0             29               SETB P2.0 ;
+006D D28C             30               SETB TR0 ;
+006F 308DFD           31               WAIT3:JNB TF0, WAIT3 ; 
+0072 C28D             32               CLR TF0 ;
+0074 C28C             33               CLR TR0 ;
+0076 758CB7           34                       MOV TH0, #0B7H  
+0079 758ABB           35               MOV TL0, #0BBH 
+007C C2A0             36               CLR P2.0 ;
+007E D28C             37               SETB TR0 ;
+0080 308DFD           38               WAIT4:JNB TF0, WAIT4 ; 
+0083 C28D             39               CLR TF0 ;
+0085 C28C             40               CLR TR0 ;
+0087 22               41                    RET 
+                      42                                
+                      43                                
+                      44                                
+                      45                
+                      46     
+0075                  47                ORG 0075H
+0075                  48                                one_eighty_degrees:  
+0075 758CF8           49                     MOV TH0, #0F8H 
+0078 758A30           50               MOV TL0, #30H 
+007B D2A0             51               SETB P2.0 ;
+007D D28C             52               SETB TR0 ;
+007F 308DFD           53               WAIT5:JNB TF0, WAIT5 ;
+0082 C28D             54               CLR TF0 ;
+0084 C28C             55               CLR TR0 ;
+0086 758CB9           56                       MOV TH0, #0B9H  
+0089 758AAF           57               MOV TL0, #0AFH
+A51 MACRO ASSEMBLER  SERVOTEST                                                            10/21/2022 11:24:31 PAGE     2
+
+008C C2A0             58               CLR P2.0 ; 
+008E D28C             59               SETB TR0 ;
+0090 308DFD           60               WAIT6:JNB TF0, WAIT6 ; 
+0093 C28D             61               CLR TF0 ;
+0095 C28C             62               CLR TR0 ;
+0097 22               63                    RET 
+                      64                                
+                      65                                
+                      66                                
+                      67                 
+0085                  68                       ORG 0085H
+0085                  69                               delay: 
+0085 7C64             70                   MOV R4,#64H ;
+0087 7B64             71                   LOOP1:MOV R3,#64H
+0089 7A64             72                   LOOP2:MOV R2,#64H
+008B DAFE             73                   LOOP3:DJNZ R2,LOOP3
+008D DBFA             74                         DJNZ R3,LOOP2
+008F DCF6             75                         DJNZ R4,LOOP1
+0091 22               76                         RET
+                      77                                             
+                      78                                             
+                      79                      
+0035                  80                      ORG 0035H
+0035 C2A0             81                   MAIN:CLR P2.0;
+0037 758901           82                        MOV TMOD, #01H ;
+                      83                                        
+003A 120055           84                        LCALL zero_degrees
+003D 120085           85                                        LCALL delay
+                      86                                        
+0040 120065           87                                        LCALL ninety_degrees
+0043 120085           88                                        LCALL delay
+                      89                                        
+0046 120075           90                                        LCALL one_eighty_degrees
+0049 120085           91                                        LCALL delay
+                      92                                        
+004C 80E7             93                        SJMP MAIN ;
+                      94                 END
+                             
+                             
+                             
+                             
+                             
+                             
+A51 MACRO ASSEMBLER  SERVOTEST                                                            10/21/2022 11:24:31 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   0085H   A   
+LOOP1. . . . . . .  C ADDR   0087H   A   
+LOOP2. . . . . . .  C ADDR   0089H   A   
+LOOP3. . . . . . .  C ADDR   008BH   A   
+MAIN . . . . . . .  C ADDR   0035H   A   
+NINETY_DEGREES . .  C ADDR   0065H   A   
+ONE_EIGHTY_DEGREES  C ADDR   0075H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+WAIT1. . . . . . .  C ADDR   005FH   A   
+WAIT2. . . . . . .  C ADDR   0070H   A   
+WAIT3. . . . . . .  C ADDR   006FH   A   
+WAIT4. . . . . . .  C ADDR   0080H   A   
+WAIT5. . . . . . .  C ADDR   007FH   A   
+WAIT6. . . . . . .  C ADDR   0090H   A   
+ZERO_DEGREES . . .  C ADDR   0055H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

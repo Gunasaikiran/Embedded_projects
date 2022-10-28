@@ -1,0 +1,76 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    10/20/2022  16:53:17  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\GanapatiLED.obj TO .\Objects\ganapati PRINT (.\Listings\ganapati.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\GanapatiLED.obj (GANAPATILED)
+
+
+LINK MAP OF MODULE:  .\Objects\ganapati (GANAPATILED)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0051H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\ganapati (GANAPATILED)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        GANAPATILED
+  C:000DH         SYMBOL        CHECK
+  C:0002H         SYMBOL        DELAY
+  C:0039H         SYMBOL        LABEL
+  D:0090H         SYMBOL        P1
+  C:0035H         SYMBOL        START
+  B:0088H.5       SYMBOL        TF0
+  D:008CH         SYMBOL        TH0
+  D:008AH         SYMBOL        TL0
+  D:0089H         SYMBOL        TMOD
+  B:0088H.4       SYMBOL        TR0
+  C:0000H         LINE#         2
+  C:0002H         LINE#         4
+  C:0005H         LINE#         5
+  C:0008H         LINE#         6
+  C:000BH         LINE#         7
+  C:000DH         LINE#         8
+  C:0010H         LINE#         9
+  C:0012H         LINE#         10
+  C:0014H         LINE#         11
+  C:0035H         LINE#         15
+  C:0037H         LINE#         16
+  C:0039H         LINE#         17
+  C:003AH         LINE#         18
+  C:003BH         LINE#         19
+  C:003DH         LINE#         20
+  C:003FH         LINE#         21
+  C:0041H         LINE#         22
+  C:0043H         LINE#         24
+  C:0045H         LINE#         25
+  C:0047H         LINE#         26
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/20/2022  16:53:17  PAGE 2
+
+
+  C:0049H         LINE#         27
+  C:004BH         LINE#         28
+  C:004DH         LINE#         29
+  C:004FH         LINE#         31
+  -------         ENDMOD        GANAPATILED
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0031H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=81
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,48 @@
+A51 MACRO ASSEMBLER  BASICLED                                                             10/21/2022 12:49:53 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\BASICLED.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE BASICLED.a51 SET(SMALL) DEBUG PRINT(.\Listings\BASICLED.lst) OBJECT(.\O
+                      bjects\BASICLED.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H 
+0000 8033              2       SJMP START 
+                       3     
+                       4     
+0035                   5     ORG 0035H
+0035 850189            6       START: MOV TMOD, 01H 
+0038 758CFE            7             REPEAT: MOV TH0, #0FEH
+003B 758A70            8                     MOV TL0, #70H
+003E B290              9                     CPL P1.0 
+0040 D28C             10                     SETB TR0 
+0042 308DFD           11                     CHECK: JNB TF0, CHECK 
+0045 C28C             12                            CLR TR0 
+0047 C28D             13                            CLR TF0 
+0049 80ED             14                            JMP REPEAT 
+                      15     END
+A51 MACRO ASSEMBLER  BASICLED                                                             10/21/2022 12:49:53 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CHECK. . . . . . .  C ADDR   0042H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+REPEAT . . . . . .  C ADDR   0038H   A   
+START. . . . . . .  C ADDR   0035H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

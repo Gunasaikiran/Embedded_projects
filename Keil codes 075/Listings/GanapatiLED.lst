@@ -1,0 +1,61 @@
+A51 MACRO ASSEMBLER  GANAPATILED                                                          10/21/2022 11:34:25 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\GanapatiLED.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE GanapatiLED.a51 SET(SMALL) DEBUG PRINT(.\Listings\GanapatiLED.lst) OBJE
+                      CT(.\Objects\GanapatiLED.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H 
+0000 8033              2     SJMP START 
+                       3     
+                       4     
+0002                   5     DELAY: 
+0002 758901            6           MOV TMOD, #01H 
+0005 758C00            7           MOV TH0,#00H 
+0008 758A00            8           MOV TL0,#00H  
+000B D28C              9           SETB TR0  
+000D 308DFD           10           CHECK: JNB TF0, CHECK  
+0010 C28C             11                  CLR TR0 
+0012 C28D             12                  CLR TF0  
+0014 22               13     RET 
+                      14     
+                      15     
+                      16     
+0035                  17     ORG 0035H
+0035 7808             18        START: MOV R0,#08H  
+0037 7400             19               MOV A,#00H 
+0039 D3               20               LABEL: SETB C 
+003A 33               21                      RLC A    
+003B F590             22                      MOV P1,A 
+003D 1102             23                      ACALL DELAY  
+003F 1102             24                      ACALL DELAY 
+0041 D8F6             25                      DJNZ R0, LABEL 
+0043 80F0             26     JMP START  
+                      27     END
+A51 MACRO ASSEMBLER  GANAPATILED                                                          10/21/2022 11:34:25 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CHECK. . . . . . .  C ADDR   000DH   A   
+DELAY. . . . . . .  C ADDR   0002H   A   
+LABEL. . . . . . .  C ADDR   0039H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+START. . . . . . .  C ADDR   0035H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
