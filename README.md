@@ -1,4 +1,4 @@
-# Embeded_projects
+# Embedded_projects
 <h2>Embedded systems based on 8051</h2>
 The included projects are:
 <ul>
