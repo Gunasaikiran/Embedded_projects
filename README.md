@@ -11,7 +11,7 @@ The included projects are:
 
 The simulations are performed in Proteus and Keil IDE is used to code and debug.
 
-Add a Star 🌟 to this 👆 Repositor
+Add a Star 🌟 to this 👆 Repository
 
 
 For Sponsor or Project Enquiry
